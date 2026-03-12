@@ -1,0 +1,46 @@
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/docfx/main/schemas/docfx.schema.json",
+  "metadata": [
+    {
+      "src": [
+        {
+          "src": "../src",
+          "files": [
+            "**/*.csproj"
+          ]
+        }
+      ],
+      "dest": "api"
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**/*.{md,yml}"
+        ],
+        "exclude": [
+          "_site/**"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ]
+      }
+    ],
+    "output": "_site",
+    "template": [
+      "default",
+      "modern"
+    ],
+    "globalMetadata": {
+      "_appName": "\u7BA1\u7406\u7D44\u5408\u5165\u91D1\u652F\u6255\u7BA1\u7406\u30B7\u30B9\u30C6\u30E0\u30DE\u30CB\u30E5\u30A2\u30EB",
+      "_appTitle": "\u7BA1\u7406\u7D44\u5408\u5165\u91D1\u652F\u6255\u7BA1\u7406\u30B7\u30B9\u30C6\u30E0\u30DE\u30CB\u30E5\u30A2\u30EB",
+      "_enableSearch": false,
+      "pdf": true
+    }
+  }
+}
