@@ -8,7 +8,7 @@
 
 | データ | 場所 | 説明 |
 |--------|------|------|
-| データベース | `%LOCALAPPDATA%\UnionDuesManager\SecureBank.db` | 口座情報・処理履歴・マスタデータ |
+| データベース | `%LOCALAPPDATA%\UnionDuesCollectionManager\SecureBank.db` | 口座情報・処理履歴・マスタデータ |
 | 暗号化キー | `%APPDATA%\AccountReconciler\secret.key` | 口座情報の復号に必要 |
 
 **この2つはセットで管理する必要があります。**
@@ -36,7 +36,7 @@
 バックアップファイルはZIP形式で保存されます。
 
 ```
-ファイル名例：backup_UnionDuesManager_20250301_143022.zip
+ファイル名例：backup_UnionDuesCollectionManager_20250301_143022.zip
 ```
 
 ### バックアップZIPの内容

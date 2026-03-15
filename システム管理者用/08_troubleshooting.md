@@ -9,8 +9,8 @@
 **ログファイルの場所：**
 
 ```
-%LOCALAPPDATA%\UnionDuesManager\logs\
-（例：C:\Users\username\AppData\Local\UnionDuesManager\logs\）
+%LOCALAPPDATA%\UnionDuesCollectionManager\logs\
+（例：C:\Users\username\AppData\Local\UnionDuesCollectionManager\logs\）
 ```
 
 エクスプローラーのアドレスバーに上記のパスを入力すると直接開けます。

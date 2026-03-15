@@ -38,7 +38,7 @@
 
 | ファイル | パス | 説明 |
 |---------|------|------|
-| データベース | `%LOCALAPPDATA%\UnionDuesManager\SecureBank.db` | 口座情報・処理履歴などを格納 |
+| データベース | `%LOCALAPPDATA%\UnionDuesCollectionManager\SecureBank.db` | 口座情報・処理履歴などを格納 |
 | 暗号化キー | `%APPDATA%\AccountReconciler\secret.key` | 口座情報の復号に必要。**絶対に削除しない** |
 | APIトークン | `%LOCALAPPDATA%\AccountReconciler\kintone_api_tokens.json` | Kintone接続トークン。**gitにコミットしない** |
 | アプリID設定 | `%LOCALAPPDATA%\AccountReconciler\kintone_app_ids.json` | KintoneアプリIDの設定 |

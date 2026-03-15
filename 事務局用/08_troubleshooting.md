@@ -85,7 +85,7 @@
 **ログファイルの場所：**
 
 ```
-C:\Users\（ユーザー名）\AppData\Local\UnionDuesManager\logs\
+C:\Users\（ユーザー名）\AppData\Local\UnionDuesCollectionManager\logs\
 ```
 
 ファイルはエクスプローラーのアドレスバーに上記パスを入力することで開けます（`（ユーザー名）` は実際のWindowsユーザー名に置き換えてください）。

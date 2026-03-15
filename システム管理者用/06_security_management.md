@@ -85,7 +85,7 @@ KintoneのAPIにアクセスするための認証トークンです。
 ```
 %APPDATA%\AccountReconciler\secret.key
 %LOCALAPPDATA%\AccountReconciler\kintone_api_tokens.json
-%LOCALAPPDATA%\UnionDuesManager\SecureBank.db
+%LOCALAPPDATA%\UnionDuesCollectionManager\SecureBank.db
 ```
 
 ゴミ箱に入れるだけでなく、ファイル削除ツールやストレージの初期化で確実に消去してください。

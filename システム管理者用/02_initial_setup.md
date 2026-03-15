@@ -22,7 +22,7 @@
 
 MSIX を実行する前に、一度だけ署名証明書をインストールします。
 
-1. `UnionDuesManager_signing.cer` をダウンロードします
+1. `UnionDuesCollectionManager_signing.cer` をダウンロードします
 2. ファイルをダブルクリック →「証明書のインストール」をクリック
 3. 「ローカルコンピューター」を選択 →「次へ」
 4. 「証明書をすべて次のストアに配置する」を選択 →「参照」
@@ -50,7 +50,7 @@ MSIX を実行する前に、一度だけ署名証明書をインストールし
 
 ### データベースの作成
 
-- 場所：`%LOCALAPPDATA%\UnionDuesManager\SecureBank.db`
+- 場所：`%LOCALAPPDATA%\UnionDuesCollectionManager\SecureBank.db`
 - 必要なテーブルがすべて自動作成されます
 - 既存のDBがある場合はマイグレーション（スキーマ更新）が自動適用されます
 
@@ -138,7 +138,7 @@ MSIX を実行する前に、一度だけ署名証明書をインストールし
 PC を載せ替えた後（バックアップ→リストア済み）に旧バージョンのDBを復元した場合、起動時に自動でマイグレーションが適用されます。
 
 - マイグレーションは起動時に自動実行されるため、手動操作は不要です
-- マイグレーション失敗時はログ（`%LOCALAPPDATA%\UnionDuesManager\logs\`）を確認してください
+- マイグレーション失敗時はログ（`%LOCALAPPDATA%\UnionDuesCollectionManager\logs\`）を確認してください
 - 失敗する場合は担当開発者に連絡してください
 
 ---

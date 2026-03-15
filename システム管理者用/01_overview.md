@@ -44,12 +44,12 @@
 
 | ファイル | パス | 取り扱い |
 |---------|------|---------|
-| **データベース** | `%LOCALAPPDATA%\UnionDuesManager\SecureBank.db` | バックアップ対象。直接コピーによるPC移行は不可 |
+| **データベース** | `%LOCALAPPDATA%\UnionDuesCollectionManager\SecureBank.db` | バックアップ対象。直接コピーによるPC移行は不可 |
 | **暗号化キー** | `%APPDATA%\AccountReconciler\secret.key` | **絶対に削除・移動しない**。バックアップ機能で自動管理 |
 | **APIトークン** | `%LOCALAPPDATA%\AccountReconciler\kintone_api_tokens.json` | 第三者に見せない。gitにコミットしない |
 | **アプリID設定** | `%LOCALAPPDATA%\AccountReconciler\kintone_app_ids.json` | Kintone構成変更時のみ更新 |
 | **Kintone設定** | `%LOCALAPPDATA%\AccountReconciler\kintone_config.json` | ドメイン等の接続情報 |
-| **ログ** | `%LOCALAPPDATA%\UnionDuesManager\logs\` | 日付別テキストファイル。障害調査時に参照 |
+| **ログ** | `%LOCALAPPDATA%\UnionDuesCollectionManager\logs\` | 日付別テキストファイル。障害調査時に参照 |
 
 > `%LOCALAPPDATA%` = `C:\Users\（ユーザー名）\AppData\Local`
 > `%APPDATA%` = `C:\Users\（ユーザー名）\AppData\Roaming`
