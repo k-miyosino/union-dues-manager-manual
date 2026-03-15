@@ -21,18 +21,18 @@
 
 ```mermaid
 flowchart LR
-    subgraph PC["このPCにインストール済"]
+    subgraph PC["アプリインストール先PC"]
         App["WinUI3 デスクトップアプリ\n（UnionDuesCollectionManager）"]
         DB["ローカルDB\nSecureBank.db（SQLite）\n・口座情報（暗号化）\n・処理ログ\n・銀行マスタ"]
+        Browser["ブラウザ"]
         App <--> DB
     end
     Kintone["Kintone\n（クラウド）\n・組合員マスタ\n・物件・駐車場契約\n・請求レコード・入金情報"]
-    Browser["ブラウザ\n（Web21）"]
-    Bank["三井住友銀行\n（クラウド）"]
+    Bank["委託先銀行\n（クラウド）\n全銀フォーマット対応・1行のみ"]
 
     App <-->|"API通信\n（APIトークン認証）"| Kintone
     App -->|"全銀ファイル生成"| Browser
-    Browser -->|"ファイル提出"| Bank
+    Browser -->|"ファイル提出\n（インターネットバンキング）"| Bank
     Bank -->|"振替結果DL"| Browser
     Browser -->|"結果取込"| App
 ```
