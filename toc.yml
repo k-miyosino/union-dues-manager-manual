@@ -1,4 +1,4 @@
-- name: Docs
-  href: docs/
-- name: API
-  href: api/
+- name: 事務局用マニュアル
+  href: 事務局用/
+- name: システム管理者用マニュアル
+  href: システム管理者用/

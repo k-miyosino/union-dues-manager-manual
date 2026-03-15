@@ -12,6 +12,7 @@
 | [第2章](02_initial_setup.md) | 初期設定 | Kintone接続設定、マスタデータの初期登録 |
 | [第3章](03_monthly_billing.md) | 月次締め処理 | 請求データ生成、全銀ファイル作成・提出 |
 | [第4章](04_reconciliation.md) | 入金消込処理 | 振替結果の取込、Kintoneへの反映 |
+| [第4章補足](04b_counter_payment.md) | 窓口払いの処理 | 現金受領時の手動入金登録手順 |
 | [第5章](05_master_management.md) | マスタ管理 | 銀行・組合員口座・委託先口座の管理 |
 | [第6章](06_maintenance.md) | バックアップ・メンテナンス | データの保護、PC移行時の手順 |
 | [第7章](07_kintone_operations.md) | Kintone操作 | 入居・退去・各種変更時のKintone登録手順 |
