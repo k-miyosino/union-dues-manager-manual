@@ -1,6 +1,6 @@
 - name: はじめに
   href: index.md
-- name: 第1章 システム概要
+- name: 第1章 管理者の責務と環境概要
   href: 01_overview.md
 - name: 第2章 インストール・初期セットアップ
   href: 02_initial_setup.md

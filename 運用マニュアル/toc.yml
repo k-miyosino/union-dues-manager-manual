@@ -1,6 +1,6 @@
 - name: はじめに
   href: index.md
-- name: 第1章 システム概要・基本操作
+- name: 第1章 業務概要・基本操作
   href: 01_overview.md
 - name: 第2章 初期設定
   href: 02_initial_setup.md
