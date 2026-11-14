@@ -7,7 +7,8 @@
           "**/*.{md,yml}"
         ],
         "exclude": [
-          "_site/**"
+          "_site/**",
+          "chatbot/**"
         ]
       }
     ],
@@ -25,7 +26,8 @@
           "**/*.svg"
         ],
         "exclude": [
-          "_site/**"
+          "_site/**",
+          "chatbot/**"
         ]
       }
     ],

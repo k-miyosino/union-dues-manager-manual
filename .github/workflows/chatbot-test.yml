@@ -1,0 +1,42 @@
+name: Test chatbot
+
+# マニュアル（章の追加・改名）か chatbot/ を変えたプルリクエストで、
+# マニュアルをまとめられること、型チェック、テストを確かめる。
+on:
+  pull_request:
+    paths:
+      - 'chatbot/**'
+      - '**/*.md'
+      - '**/toc.yml'
+      - '.github/workflows/chatbot-test.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: chatbot
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: chatbot/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Test
+        run: npm test
+
+      - name: Bundle Worker (dry run)
+        run: npx wrangler deploy --dry-run

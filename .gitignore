@@ -3,3 +3,6 @@ _site/
 
 # Claude Code local settings
 .claude/settings.local.json
+
+# ローカル実行用のシークレット（chatbot/.dev.vars に置く。誤って別の場所に置いてもコミットしない）
+.dev.vars
