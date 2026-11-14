@@ -1,0 +1,10 @@
+node_modules/
+.wrangler/
+.dev.vars
+
+# マニュアルをまとめたファイル（npm run build:manual で作る）
+src/manual.generated.json
+
+# 評価の結果と、評価用にまとめた部品
+eval/results/
+eval/.cache/

@@ -1,0 +1,27 @@
+name = "union-dues-manual-chat"
+main = "src/worker.ts"
+compatibility_date = "2026-11-01"
+
+# Cloudflare のアカウントは、環境変数 CLOUDFLARE_ACCOUNT_ID で指定する（GitHub Actions ではシークレット）。
+# シークレットは wrangler secret put で登録する（README.md の「初回セットアップ」）:
+#   npx wrangler secret put ANTHROPIC_API_KEY
+#   npx wrangler secret put APP_TOKEN
+
+# 回数と設定を置く D1 データベース
+# 作成: npx wrangler d1 create union-dues-manual-chat（表示された database_id を下に書いてコミットする）
+# テーブル作成: npx wrangler d1 migrations apply union-dues-manual-chat --remote
+[[d1_databases]]
+binding = "DB"
+database_name = "union-dues-manual-chat"
+database_id = "00000000-0000-0000-0000-000000000000"
+migrations_dir = "migrations"
+
+[vars]
+# 使うモデル。変えるときは費用に注意（README.md の「モデル」）
+CHAT_MODEL = "claude-haiku-5-5"
+# マニュアルの公開サイト（答えの下に出すリンクの元）
+MANUAL_URL = "https://k-miyosino.github.io/union-dues-manager-manual"
+
+# 定期実行: 古い回数の記録を消す（毎日 日本時間 4:00 = UTC 19:00）
+[triggers]
+crons = ["0 19 * * *"]
