@@ -25,16 +25,24 @@
 新しい組合員が入居した際の手順です。
 > 同一人物が複数物件を所有する場合は、別の組合員として登録するので、本手順を踏みます。
 
-```
-1. システム管理者へKintoneユーザー登録を依頼する
-   ↓
-2. ユーザー追加の連絡を受けたら M_組合員 に登録する
-   ↓
-3. M_組合員物件所有状況 に登録する
-   ↓
-4. 駐車場を利用する場合は M_組合員駐車場契約 に登録する
-   ↓
-5. 本システムで口座情報を登録する（→第5章）
+紫の枠はシステム管理者に頼む作業、オレンジの枠はKintone（ブラウザー）での作業、青い枠はこのアプリでの作業です。
+
+```mermaid
+flowchart TD
+    A["1. システム管理者に、Kintoneユーザーの登録を頼む"]:::admin
+    B["2. ユーザー追加の連絡を受けたら、<br/>Kintoneの M_組合員 に登録する"]:::kintone
+    C["3. Kintoneの M_組合員物件所有状況 に登録する"]:::kintone
+    Q{"駐車場を使う？"}
+    D["4. Kintoneの M_組合員駐車場契約 に登録する"]:::kintone
+    E["5. このアプリの組合員口座マスタで、<br/>口座情報を登録する（→ 第5章）"]:::app
+    A --> B --> C --> Q
+    Q -- "はい" --> D --> E
+    Q -- "いいえ" --> E
+    classDef app fill:#dbeafe,stroke:#1e40af,color:#0f172a
+    classDef bank fill:#dcfce7,stroke:#166534,color:#0f172a
+    classDef kintone fill:#ffedd5,stroke:#9a3412,color:#0f172a
+    classDef admin fill:#f3e8ff,stroke:#6b21a8,color:#0f172a
+    classDef stop fill:#fee2e2,stroke:#991b1b,color:#0f172a
 ```
 
 ---
@@ -117,14 +125,23 @@ Kintoneの **「M_組合員駐車場契約」** アプリを開き、新規レ�
 
 組合員が退去した際の手順です。
 
-```
-1. M_組合員の「状況」を退去状態に変更する
-   ↓
-2. M_組合員物件所有状況の「終了日」を設定し「状況」を変更する
-   ↓
-3. 駐車場を利用していた場合は M_組合員駐車場契約 の「契約終了日」を設定する
-   ↓
-4. 本システムで組合員口座を「無効化」する（→第5章）
+オレンジの枠はKintone（ブラウザー）での作業、青い枠はこのアプリでの作業です。
+
+```mermaid
+flowchart TD
+    A["1. Kintoneの M_組合員 で、<br/>「状況」を退去状態に変更する"]:::kintone
+    B["2. Kintoneの M_組合員物件所有状況 で、<br/>「終了日」を設定し「状況」を変更する"]:::kintone
+    Q{"駐車場を使っていた？"}
+    C["3. Kintoneの M_組合員駐車場契約 で、<br/>「契約終了日」を設定する"]:::kintone
+    D["4. このアプリの組合員口座マスタで、<br/>口座を「無効化」する（→ 第5章）"]:::app
+    A --> B --> Q
+    Q -- "はい" --> C --> D
+    Q -- "いいえ" --> D
+    classDef app fill:#dbeafe,stroke:#1e40af,color:#0f172a
+    classDef bank fill:#dcfce7,stroke:#166534,color:#0f172a
+    classDef kintone fill:#ffedd5,stroke:#9a3412,color:#0f172a
+    classDef admin fill:#f3e8ff,stroke:#6b21a8,color:#0f172a
+    classDef stop fill:#fee2e2,stroke:#991b1b,color:#0f172a
 ```
 
 > **終了日の設定を忘れないでください。**
