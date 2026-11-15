@@ -13,7 +13,7 @@ compatibility_date = "2026-11-01"
 [[d1_databases]]
 binding = "DB"
 database_name = "union-dues-manual-chat"
-database_id = "00000000-0000-0000-0000-000000000000"
+database_id = "cc4eed5f-8d5c-4f87-ac2b-ab0ad8e013f6"
 migrations_dir = "migrations"
 
 [vars]
