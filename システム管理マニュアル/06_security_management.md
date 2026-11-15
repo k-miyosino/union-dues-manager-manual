@@ -42,13 +42,17 @@
 KintoneのAPIにアクセスするための認証トークンです。
 7つのKintoneアプリそれぞれに対して1つのトークンが必要です。
 
+APIトークンは、メンテナンス画面から取り込むと、このPC・このWindowsユーザー専用に暗号化して保存されます（`kintone_api_tokens.dat`）。
+
 ### 管理上の注意事項
 
 | 注意事項 | 内容 |
 |---------|------|
-| 第三者に見せない | `kintone_api_tokens.json` の内容は漏洩させない |
+| 第三者に見せない | 取り込みに使う `kintone_api_tokens.json` の内容は漏洩させない |
+| 取り込み後に削除 | 取り込みに使った `kintone_api_tokens.json` は、取り込みが済んだら削除する |
 | gitにコミットしない | `.gitignore` に登録済みだが、誤って追加しないよう注意 |
-| PC廃棄時に削除 | `%LOCALAPPDATA%\AccountReconciler\kintone_api_tokens.json` を削除 |
+
+質問機能のアプリ用トークン（`manualChatToken`）も、APIトークンと同じように扱います。
 
 ### APIトークンの更新・ローテーション
 
@@ -57,10 +61,12 @@ KintoneのAPIにアクセスするための認証トークンです。
 1. Kintoneで対象アプリを開き、**「アプリの設定」→「APIトークン」** を開きます
 2. 既存トークンを削除し、**「生成する」** で新しいトークンを発行します
 3. **「アプリを更新」** をクリックして確定します
-4. `%LOCALAPPDATA%\AccountReconciler\kintone_api_tokens.json` を更新します
-5. アプリを再起動して動作確認します
+4. 新しいトークンを書いた `kintone_api_tokens.json` を作り、メンテナンス画面の **「ファイルから取り込む」** で取り込みます（→ [第3章](03_kintone_config.md)）。一部のアプリだけ再発行した場合も、7アプリ分すべて書いたファイルを取り込みます
+5. 取り込みに使ったファイルを削除します
+6. 「請求データ生成」などで動作を確認します
 
 > トークンを更新しても過去のデータには影響しません。
+> 質問機能のアプリ用トークンを入れ替えた場合も、新しいトークンを書いたファイルを各PCで取り込みます。
 
 ---
 
@@ -71,7 +77,7 @@ KintoneのAPIにアクセスするための認証トークンです。
 | ファイル | 推奨対応 |
 |---------|---------|
 | `secret.key` | Windowsのユーザーアカウント権限で保護される（DPAPI）。共有PCの場合は専用ユーザーアカウントで運用 |
-| `kintone_api_tokens.json` | 管理者のみがアクセスできるフォルダに配置 |
+| `kintone_api_tokens.json`（取り込み用） | 取り込み後に削除する。保管する場合は管理者のみがアクセスできる場所に置く |
 | バックアップZIP | パスワード保護付きストレージや外付けドライブに保管 |
 
 ---
@@ -80,13 +86,12 @@ KintoneのAPIにアクセスするための認証トークンです。
 
 **作業前に必ずバックアップを取得してください**（→[第7章](07_backup_migration.md)）
 
-廃棄・クリーンインストール前に削除すべきファイル：
+廃棄・クリーンインストール前に行うこと：
 
-```
-%APPDATA%\AccountReconciler\secret.key
-%LOCALAPPDATA%\AccountReconciler\kintone_api_tokens.json
-%LOCALAPPDATA%\UnionDuesCollectionManager\SecureBank.db
-```
+1. 手動バックアップを作成し、安全な場所に保管します
+2. アプリをアンインストールします（データベース・暗号化キー・取り込んだAPIトークンなどの設定が削除されます）
+3. ドキュメントフォルダの `UnionDuesCollectionManager\AutoBackup`（自動バックアップ）を削除します
+4. 取り込みに使った `kintone_api_tokens.json` やバックアップZIPがPCに残っていないか確認し、削除します
 
 ゴミ箱に入れるだけでなく、ファイル削除ツールやストレージの初期化で確実に消去してください。
 

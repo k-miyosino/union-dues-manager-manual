@@ -175,20 +175,14 @@ GitHub Releases ページから最新の `.msix` をダウンロードしてダ�
 
 ### 3. アプリを一度起動
 
-`%LOCALAPPDATA%\AccountReconciler\` フォルダが自動作成されます。
+Kintoneドメインの設定とログインを行います（→ [第2章](02_initial_setup.md)）。
 
-### 4. update_config.json の配置（自動更新を有効にする場合）
+### 4. GitHub PAT の設定（自動更新を有効にする場合）
 
-`%LOCALAPPDATA%\AccountReconciler\update_config.json` を作成します：
-
-```json
-{
-  "githubPat": "github_pat_xxxxxxxxxxxxxxxx"
-}
-```
+メンテナンス画面の **「アプリの更新」** セクションの **「GitHub PAT」** 欄にトークンを貼り付けて **「設定を保存」** をクリックします（暗号化して保存されます。次回起動時から有効）。
 
 PAT の作成方法：GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens
-→ 対象リポジトリのみ・**Contents: Read-only** 権限で発行したトークンを貼り付けます。
+→ 対象リポジトリのみ・**Contents: Read-only** 権限で発行します。
 
 > PAT を設定しない場合は自動更新チェックがスキップされます。
 > その場合は GitHub Releases ページから手動でダウンロードして更新してください。
@@ -203,7 +197,7 @@ PAT の作成方法：GitHub → Settings → Developer settings → Personal ac
 | `UnionDuesCollectionManager_signing.cer` | 開発者が保管・配布 | エンドユーザーへの証明書配布用 |
 | `SIGNING_CERT_PFX` | GitHub Secrets | CI が PFX を復元するための Base64 |
 | `SIGNING_CERT_PASSWORD` | GitHub Secrets | PFX のパスワード |
-| `update_config.json` | `%LOCALAPPDATA%\AccountReconciler\` | エンドユーザー PC ごとに配置する PAT |
+| `update_pat.dat` | `%LOCALAPPDATA%\AccountReconciler\` | エンドユーザー PC ごとにメンテナンス画面で設定する PAT（暗号化） |
 
 ---
 
